@@ -12,7 +12,7 @@ It keeps SEO, main.css and feed, then adds MathJax scripts.
 <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
 <link type="application/atom+xml" rel="alternate" href="{{ '/feed.xml' | relative_url }}" title="{{ site.title | escape }}" />
 
-<!-- MathJax v3 config -->
+<!-- MathJax v3 最小可用配置：CHTML 输出 -->
 <script>
   window.MathJax = {
     tex: {
@@ -27,20 +27,13 @@ It keeps SEO, main.css and feed, then adds MathJax scripts.
         vect: ["{\\boldsymbol{#1}}", 1],
         ang:  ["{\\left\\langle #1 \\right\\rangle}", 1]
       }
-    },
-    chtml: { font: 'STIX', matchFontHeight: false },
-    svg: { fontCache: 'global' }
+    }
   };
-  document.addEventListener('DOMContentLoaded', () => {
-    if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise();
-  });
 </script>
-
-<!-- Main CDN -->
-<!-- <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script> -->
-<!-- Fallback CDN (uncomment if needed) -->
+<!-- 只保留一条脚本；锁定 3.2.2 版本，避免混装 -->
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml.min.js"></script>
 
+<!-- 可选：一点点样式 -->
 <style>
   .mjx-chtml { font-size: 1.05em; }
   .MathJax_Display { margin: 1rem 0; text-align: center; }
