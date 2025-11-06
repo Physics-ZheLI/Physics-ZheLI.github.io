@@ -1,3 +1,18 @@
+{%- comment -%}
+This file overrides minima's head.html so we can always load MathJax.
+It keeps SEO, main.css and feed, then adds MathJax scripts.
+{%- endcomment -%}
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{%- seo -%}
+
+<link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+<link type="application/atom+xml" rel="alternate" href="{{ '/feed.xml' | relative_url }}" title="{{ site.title | escape }}" />
+
+
 <!-- MathJax v4 配置（CHTML 输出） -->
 <script>
   window.MathJax = {
@@ -7,23 +22,27 @@
       macros: {
         RR: "{\\mathbb{R}}", R: "{\\mathbb{R}}",
         CC: "{\\mathbb{C}}", C: "{\\mathbb{C}}",
-        dd: "{\\,\\mathrm{d}}",
+        dd: "{\\ \\mathrm{d}}",
         abs:  ["{\\left| #1 \\right|}", 1],
         norm: ["{\\left\\lVert #1 \\right\\rVert}", 1],
         vect: ["{\\boldsymbol{#1}}", 1],
         ang:  ["{\\left\\langle #1 \\right\\rangle}", 1]
       }
     },
-    // 可选：改数学字体族（STIX / Latin-Modern / Gyre-Termes / Gyre-Pagella / Neo-Euler / TeX）
-    chtml: { font: 'STIX', matchFontHeight: false }
+    output: {
+      // 这里就是 v4 的统一字体配置
+      // 可选：'mathjax-tex' | 'mathjax-stix2' | 'mathjax-gyre-pagella'
+      //      'mathjax-gyre-termes' | 'mathjax-latinmodern' | 'mathjax-neo-euler'
+      font: 'mathjax-stix2'
+    }
   };
 </script>
 
 <!-- v4：不再有 /es5/，可用“滚动版本”或锁定具体版本 -->
 <!-- 滚动 4.x： -->
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+<!-- <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script> -->
 <!-- 或锁定 4.0.0（固定版本）： -->
-<!-- <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-chtml.js"></script> -->
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-chtml.js"></script>
 
 <style>
   .mjx-chtml { font-size: 1.06em; }
