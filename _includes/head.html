@@ -20,7 +20,10 @@ window.MathJax = {
     // 注册这些包
     packages: {'[+]': ['ams', 'physics', 'color', 'mhchem']},
     inlineMath: [['$', '$'], ['\\(', '\\)']],
-    displayMath: [['$$','$$'], ['\\[','\\]']]
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    macros: {
+        RR: "{\\mathbb{R}}", CC: "{\\mathbb{C}}"
+      }
   },
   output: { font: 'mathjax-stix2' }
 };
