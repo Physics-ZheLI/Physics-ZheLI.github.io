@@ -17,20 +17,19 @@ It keeps SEO, main.css and feed, then adds MathJax scripts.
 <script>
   window.MathJax = {
     loader: {
-      paths: {font: 'https://cdn.jsdelivr.net/npm/@mathjax'},
       load: [
         '[tex]/physics',
         '[tex]/ams',
         '[tex]/boldsymbol',
         '[tex]/require',
         '[tex]/mhchem',
+        '[tex]/color',
         "input/tex", 
-        "output/chtml",
-        '[font]/mathjax-euler-font'
+        "output/chtml"
       ]
     },
     tex: {
-      packages: {'[+]': ['physics', 'boldsymbol', 'require', 'mhchem', 'ams']},
+      packages: {'[+]': ['physics', 'boldsymbol', 'require', 'mhchem', 'ams', 'color']},
       inlineMath: [['$', '$'], ['\\(', '\\)']],
       displayMath: [['$$','$$'], ['\\[','\\]']],
       macros: {
@@ -43,7 +42,7 @@ It keeps SEO, main.css and feed, then adds MathJax scripts.
       // 这里就是 v4 的统一字体配置
       // 可选：'mathjax-tex' | 'mathjax-stix2' | 'mathjax-pagella'
       //      'mathjax-asana' | 'mathjax-modern' | 'mathjax-fira' | mathjax-termes | mathjax-euler |
-      // font: 'mathjax-stix2'
+      font: 'mathjax-stix2'
     }
   };
 </script>
