@@ -15,7 +15,7 @@ It keeps SEO, main.css and feed, then adds MathJax scripts.
 
 <!-- MathJax v4 配置（CHTML 输出） -->
 <script>
-  window.MathJax = {
+  MathJax = {
     loader: {
       load: [
         '[tex]/physics',
@@ -26,17 +26,26 @@ It keeps SEO, main.css and feed, then adds MathJax scripts.
         '[tex]/color',
         "input/tex", 
         "output/chtml"
-      ]
+      ],
+      path:{
+        font: 'https://cdn.jsdelivr.net/npm/@mathjax'
+      }
     },
     tex: {
-      packages: {'[+]': ['physics', 'boldsymbol', 'require', 'mhchem', 'ams', 'color']},
       inlineMath: [['$', '$'], ['\\(', '\\)']],
       displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      processRefs: true,
       macros: {
         RR: "{\\mathbb{R}}", R: "{\\mathbb{R}}",
         CC: "{\\mathbb{C}}", C: "{\\mathbb{C}}"
       },
-      tags: 'ams'
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '0.8em',
+      useLabelIds: true,
+      packages: {'[+]': ['physics', 'mhchem', 'boldsymbol', 'require', 'color', 'noerrors', 'mathtools']}
     },
     output: {
       // 这里就是 v4 的统一字体配置
@@ -47,9 +56,8 @@ It keeps SEO, main.css and feed, then adds MathJax scripts.
   };
 </script>
 
-<!-- v4：不再有 /es5/，可用“滚动版本”或锁定具体版本 -->
 <!-- 滚动 4.x： -->
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 <!-- 或锁定 4.0.0（固定版本）： -->
 <!-- <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-chtml.js"></script> -->
 
