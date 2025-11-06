@@ -16,6 +16,10 @@ It keeps SEO, main.css and feed, then adds MathJax scripts.
 <!-- MathJax v4 配置（CHTML 输出） -->
 <script>
 window.MathJax = {
+  loader: {
+      // 这里写 [tex]/ 前缀（只在配置里用）
+      load: ['[tex]/require', '[tex]/ams', '[tex]/physics', '[tex]/color', '[tex]/mhchem']
+    },
   tex: {
     // 注册这些包
     packages: {'[+]': ['ams', 'physics', 'color', 'mhchem']},
