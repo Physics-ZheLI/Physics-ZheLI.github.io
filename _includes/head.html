@@ -1,13 +1,11 @@
+<!-- MathJax v3 配置 -->
 <script>
   window.MathJax = {
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']],
       displayMath: [['$$','$$'], ['\\[','\\]']],
-      // 这里定义“自定义命令”
       macros: {
         RR: "{\\mathbb{R}}",
-        NN: "{\\mathbb{N}}",
-        ZZ: "{\\mathbb{Z}}",
         CC: "{\\mathbb{C}}",
         dd: "{\\,\\mathrm{d}}",
         abs: ["{\\left| #1 \\right|}", 1],
@@ -16,17 +14,16 @@
         ang: ["{\\left\\langle #1 \\right\\rangle}", 1]
       }
     },
-    // 选择输出与字体（CHTML 可控；SVG 则用自带矢量）
-    chtml: {
-      font: 'STIX',   // 'TeX'（默认）, 'STIX', 'Gyre-Pagella', 'Gyre-Termes', 'Latin-Modern'
-      matchFontHeight: false
-    }
+    chtml: { font: 'STIX', matchFontHeight: false },
+    svg: { fontCache: 'global' }
   };
 </script>
+
+<!-- 加载 MathJax -->
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
+<!-- 可选：调整字号和间距 -->
 <style>
-  .mjx-chtml { font-size: 1.02em; }
-  /* 行间式与正文间距更舒服 */
-  .post .mjx-chtml.MathJax_Display { margin: 1.0rem 0; }
+  .mjx-chtml { font-size: 1.05em; }
+  .MathJax_Display { margin: 1rem 0; text-align: center; }
 </style>
