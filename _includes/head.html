@@ -18,11 +18,11 @@ It keeps SEO, main.css and feed, then adds MathJax scripts.
 window.MathJax = {
   loader: {
       // 这里写 [tex]/ 前缀（只在配置里用）
-      load: ['[tex]/require', '[tex]/ams', '[tex]/physics', '[tex]/color', '[tex]/mhchem']
+      load: ['[tex]/ams', '[tex]/physics', '[tex]/color', '[tex]/mhchem']
     },
   tex: {
     // 注册这些包
-    packages: {'[+]': ['require', 'ams', 'physics', 'color', 'mhchem']},
+    packages: {'[+]': ['ams', 'physics', 'color', 'mhchem']},
     inlineMath: [['$', '$'], ['\\(', '\\)']],
     displayMath: [['$$','$$'], ['\\[','\\]']],
     macros: {
