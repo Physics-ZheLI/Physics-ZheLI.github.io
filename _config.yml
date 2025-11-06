@@ -1,0 +1,14 @@
+title: 我的博客
+description: 折腾记录与随笔
+url: https://你的用户名.github.io
+timezone: Asia/Singapore
+
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Minima 的页头菜单（想要哪些页面出现在导航）
+header_pages:
+  - about.md
+  - index.md
