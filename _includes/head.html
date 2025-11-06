@@ -1,0 +1,26 @@
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      // 这里定义“自定义命令”
+      macros: {
+        RR: "{\\mathbb{R}}",
+        NN: "{\\mathbb{N}}",
+        ZZ: "{\\mathbb{Z}}",
+        CC: "{\\mathbb{C}}",
+        dd: "{\\,\\mathrm{d}}",
+        abs: ["{\\left| #1 \\right|}", 1],
+        norm:["{\\left\\lVert #1 \\right\\rVert}", 1],
+        vect:["{\\boldsymbol{#1}}", 1],
+        ang: ["{\\left\\langle #1 \\right\\rangle}", 1]
+      }
+    },
+    // 选择输出与字体（CHTML 可控；SVG 则用自带矢量）
+    chtml: {
+      font: 'STIX',   // 'TeX'（默认）, 'STIX', 'Gyre-Pagella', 'Gyre-Termes', 'Latin-Modern'
+      matchFontHeight: false
+    }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
