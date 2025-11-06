@@ -15,53 +15,26 @@ It keeps SEO, main.css and feed, then adds MathJax scripts.
 
 <!-- MathJax v4 配置（CHTML 输出） -->
 <script>
-  MathJax = {
-    loader: {
-      load: [
-        '[tex]/physics',
-        '[tex]/ams',
-        '[tex]/boldsymbol',
-        '[tex]/require',
-        '[tex]/mhchem',
-        '[tex]/color',
-        "input/tex", 
-        "output/chtml"
-      ],
-      path:{
-        font: 'https://cdn.jsdelivr.net/npm/@mathjax'
-      }
-    },
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$','$$'], ['\\[','\\]']],
-      processEscapes: true,
-      processEnvironments: true,
-      processRefs: true,
-      macros: {
-        RR: "{\\mathbb{R}}", R: "{\\mathbb{R}}",
-        CC: "{\\mathbb{C}}", C: "{\\mathbb{C}}"
-      },
-      tags: 'ams',
-      tagSide: 'right',
-      tagIndent: '0.8em',
-      useLabelIds: true,
-      packages: {'[+]': ['physics', 'mhchem', 'boldsymbol', 'require', 'color', 'noerrors', 'mathtools']}
-    },
-    output: {
-      // 这里就是 v4 的统一字体配置
-      // 可选：'mathjax-tex' | 'mathjax-stix2' | 'mathjax-pagella'
-      //      'mathjax-asana' | 'mathjax-modern' | 'mathjax-fira' | mathjax-termes | mathjax-euler |
-      font: 'mathjax-stix2'
-    }
-  };
+window.MathJax = {
+  loader: {
+    // 一次性列出所有要加载的 TeX 扩展包
+    load: [
+      '[tex]/require',
+      '[tex]/ams',
+      '[tex]/physics',
+      '[tex]/color',
+      '[tex]/mhchem'
+    ]
+  },
+  tex: {
+    // 注册这些包
+    packages: {'[+]': ['require','ams','physics','color','mhchem']},
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']]
+  },
+  output: { font: 'mathjax-stix2' }
+};
 </script>
 
-<!-- 滚动 4.x： -->
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-<!-- 或锁定 4.0.0（固定版本）： -->
-<!-- <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-chtml.js"></script> -->
-
-<style>
-  .mjx-chtml { font-size: 1.06em; }
-  .MathJax_Display { margin: 1rem 0; text-align: center; }
-</style>
+<!-- 必须用 jsDelivr -->
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
