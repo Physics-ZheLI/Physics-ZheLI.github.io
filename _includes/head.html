@@ -1,4 +1,18 @@
-<!-- MathJax v3 配置（minima 会自动 include 这个文件） -->
+{%- comment -%}
+This file overrides minima's head.html so we can always load MathJax.
+It keeps SEO, main.css and feed, then adds MathJax scripts.
+{%- endcomment -%}
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{%- seo -%}
+
+<link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+<link type="application/atom+xml" rel="alternate" href="{{ '/feed.xml' | relative_url }}" title="{{ site.title | escape }}" />
+
+<!-- MathJax v3 config -->
 <script>
   window.MathJax = {
     tex: {
@@ -17,17 +31,15 @@
     chtml: { font: 'STIX', matchFontHeight: false },
     svg: { fontCache: 'global' }
   };
-
-  // 保险：DOM 就绪后强制 typeset 一次
   document.addEventListener('DOMContentLoaded', () => {
     if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise();
   });
 </script>
 
-<!-- 主 CDN（jsDelivr） -->
-<!-- <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script> -->
-<!-- 备用 CDN（如需可改用这一行，上面那行注释掉） -->
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml.min.js"></script>
+<!-- Main CDN -->
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<!-- Fallback CDN (uncomment if needed) -->
+<!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml.min.js"></script> -->
 
 <style>
   .mjx-chtml { font-size: 1.05em; }
