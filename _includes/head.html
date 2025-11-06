@@ -16,6 +16,7 @@ It keeps SEO, main.css and feed, then adds MathJax scripts.
 <!-- MathJax v4 配置（CHTML 输出） -->
 <script>
   window.MathJax = {
+    loader: {load: ['[tex]/physics']},
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']],
       displayMath: [['$$','$$'], ['\\[','\\]']],
@@ -27,15 +28,21 @@ It keeps SEO, main.css and feed, then adds MathJax scripts.
         norm: ["{\\left\\lVert #1 \\right\\rVert}", 1],
         vect: ["{\\boldsymbol{#1}}", 1],
         ang:  ["{\\left\\langle #1 \\right\\rangle}", 1]
-      }
+      },
+      tags: 'ams',
+      packages: {'[+]': ['physics']}
     },
     output: {
       // 这里就是 v4 的统一字体配置
-      // 可选：'mathjax-tex' | 'mathjax-stix2' | 'mathjax-gyre-pagella'
-      //      'mathjax-gyre-termes' | 'mathjax-latinmodern' | 'mathjax-neo-euler'
-      font: 'mathjax-gyre-pagella'
+      // 可选：'mathjax-tex' | 'mathjax-stix2' | 'mathjax-pagella'
+      //      'mathjax-asana' | 'mathjax-modern' | 'mathjax-fira' | mathjax-termes | mathjax-euler |
+      font: 'mathjax-termes'
     }
   };
+  window.MathJax = {
+  loader: {load: ['[tex]/require']},
+  tex: {packages: {'[+]': ['require']}}
+};
 </script>
 
 <!-- v4：不再有 /es5/，可用“滚动版本”或锁定具体版本 -->
