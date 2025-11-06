@@ -18,11 +18,17 @@ It keeps SEO, main.css and feed, then adds MathJax scripts.
 window.MathJax = {
   loader: {
       // 这里写 [tex]/ 前缀（只在配置里用）
-      load: ['[tex]/ams', '[tex]/physics', '[tex]/color', '[tex]/mhchem']
+      load: ['input/tex-base', // 必备基础库
+             'output/chtml', // 必备基础库，用来将tex转换成html
+             '[tex]/action', // [tex]/action库包含了\require等宏，可以用来加载其他的宏包
+             '[tex]/physics', 
+             '[tex]/color', 
+             '[tex]/mhchem'
+            ]
     },
   tex: {
     // 注册这些包
-    packages: {'[+]': ['ams', 'physics', 'color', 'mhchem']},
+    packages: {'[+]': ['base', 'action', 'physics', 'color', 'mhchem']},
     inlineMath: [['$', '$'], ['\\(', '\\)']],
     displayMath: [['$$','$$'], ['\\[','\\]']],
     macros: {
