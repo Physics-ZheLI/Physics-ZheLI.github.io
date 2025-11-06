@@ -1,18 +1,4 @@
-{%- comment -%}
-This file overrides minima's head.html so we can always load MathJax.
-It keeps SEO, main.css and feed, then adds MathJax scripts.
-{%- endcomment -%}
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-{%- seo -%}
-
-<link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
-<link type="application/atom+xml" rel="alternate" href="{{ '/feed.xml' | relative_url }}" title="{{ site.title | escape }}" />
-
-<!-- MathJax v3 最小可用配置：CHTML 输出 -->
+<!-- MathJax v4 配置（CHTML 输出） -->
 <script>
   window.MathJax = {
     tex: {
@@ -27,26 +13,19 @@ It keeps SEO, main.css and feed, then adds MathJax scripts.
         vect: ["{\\boldsymbol{#1}}", 1],
         ang:  ["{\\left\\langle #1 \\right\\rangle}", 1]
       }
-    }
-  }，
-   chtml: { font: 'STIX', matchFontHeight: false }  // ← 改这里：换成你想要的字体族
+    },
+    // 可选：改数学字体族（STIX / Latin-Modern / Gyre-Termes / Gyre-Pagella / Neo-Euler / TeX）
+    chtml: { font: 'STIX', matchFontHeight: false }
   };
 </script>
 
-<!-- 只保留一条脚本；锁定 3.2.2 版本，避免混装 -->
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml.min.js"></script>
+<!-- v4：不再有 /es5/，可用“滚动版本”或锁定具体版本 -->
+<!-- 滚动 4.x： -->
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+<!-- 或锁定 4.0.0（固定版本）： -->
+<!-- <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-chtml.js"></script> -->
 
-<!-- 可选：一点点样式 -->
 <style>
-  /* 全局调大/调小数学字体 */
   .mjx-chtml { font-size: 1.06em; }
-
-  /* 行间公式上下间距、居中 */
   .MathJax_Display { margin: 1rem 0; text-align: center; }
-
-  /* 文内文本（\text{}）的字体：让它跟正文一致（可选） */
-  .mjx-chtml .mjx-mtext { font-family: inherit; }
-
-  /* 粗细/颜色（按需） */
-  /* .mjx-chtml { font-weight: 500; color: #222; } */
 </style>
