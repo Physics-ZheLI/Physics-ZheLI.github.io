@@ -1,8 +1,8 @@
-title: 标题
-description: 你的描述
+title: Zhe Li's Blog!
+description: 路漫漫其修远兮
 url: https://Physics-ZheLI.github.io
 baseurl: ""              # 根站点建议留空
-timezone: Asia/Singapore # 或 Asia/Shanghai
+timezone: Asia/Shanghai
 
 theme: minima
 plugins:
