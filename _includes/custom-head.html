@@ -1,4 +1,4 @@
-<!-- MathJax v3 配置 -->
+<!-- MathJax v3 配置（minima 会自动 include 这个文件） -->
 <script>
   window.MathJax = {
     tex: {
@@ -9,20 +9,24 @@
         CC: "{\\mathbb{C}}",
         dd: "{\\,\\mathrm{d}}",
         abs: ["{\\left| #1 \\right|}", 1],
-        norm:["{\\left\\lVert #1 \\right\\rVert}", 1],
-        vect:["{\\boldsymbol{#1}}", 1],
-        ang: ["{\\left\\langle #1 \\right\\rangle}", 1]
+        norm: ["{\\left\\lVert #1 \\right\\rVert}", 1],
+        vect: ["{\\boldsymbol{#1}}", 1],
+        ang:  ["{\\left\\langle #1 \\right\\rangle}", 1]
       }
     },
     chtml: { font: 'STIX', matchFontHeight: false },
     svg: { fontCache: 'global' }
   };
+  // 保险：脚本加载后再强制 typeset 一次
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise();
+  });
 </script>
 
-<!-- 加载 MathJax -->
+<!-- 建议用 jsDelivr（稳定），也可以换 cdnjs -->
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
-<!-- 可选：调整字号和间距 -->
+<!-- 轻微样式微调 -->
 <style>
   .mjx-chtml { font-size: 1.05em; }
   .MathJax_Display { margin: 1rem 0; text-align: center; }
