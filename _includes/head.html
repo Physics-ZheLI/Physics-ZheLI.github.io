@@ -17,12 +17,16 @@ It keeps SEO, main.css and feed, then adds MathJax scripts.
 <script>
   window.MathJax = {
     loader: {
+      paths: {font: 'https://cdn.jsdelivr.net/npm/@mathjax'},
       load: [
         '[tex]/physics',
         '[tex]/ams',
         '[tex]/boldsymbol',
         '[tex]/require',
-        '[tex]/mhchem'
+        '[tex]/mhchem',
+        "input/tex", 
+        "output/chtml",
+        '[font]/mathjax-euler-font'
       ]
     },
     tex: {
@@ -31,12 +35,7 @@ It keeps SEO, main.css and feed, then adds MathJax scripts.
       displayMath: [['$$','$$'], ['\\[','\\]']],
       macros: {
         RR: "{\\mathbb{R}}", R: "{\\mathbb{R}}",
-        CC: "{\\mathbb{C}}", C: "{\\mathbb{C}}",
-        dd: "{\\ \\mathrm{d}}",
-        abs:  ["{\\left| #1 \\right|}", 1],
-        norm: ["{\\left\\lVert #1 \\right\\rVert}", 1],
-        vect: ["{\\boldsymbol{#1}}", 1],
-        ang:  ["{\\left\\langle #1 \\right\\rangle}", 1]
+        CC: "{\\mathbb{C}}", C: "{\\mathbb{C}}"
       },
       tags: 'ams'
     },
@@ -44,7 +43,7 @@ It keeps SEO, main.css and feed, then adds MathJax scripts.
       // 这里就是 v4 的统一字体配置
       // 可选：'mathjax-tex' | 'mathjax-stix2' | 'mathjax-pagella'
       //      'mathjax-asana' | 'mathjax-modern' | 'mathjax-fira' | mathjax-termes | mathjax-euler |
-      font: 'mathjax-termes'
+      // font: 'mathjax-stix2'
     }
   };
 </script>
