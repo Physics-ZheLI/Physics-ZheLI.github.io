@@ -12,6 +12,3 @@ date: 2025-11-06
 $$
 \int_0^\infty e^{-x^2}\ \dd x = \frac{\sqrt{\pi}}{2}
 $$
-
-测试自定义命令：
-$\RR,\CC, \vect{x}, \norm{x}, \abs{x}, \ang{x,y}$

@@ -16,19 +16,9 @@ It keeps SEO, main.css and feed, then adds MathJax scripts.
 <!-- MathJax v4 配置（CHTML 输出） -->
 <script>
 window.MathJax = {
-  loader: {
-    // 一次性列出所有要加载的 TeX 扩展包
-    load: [
-      '[tex]/require',
-      '[tex]/ams',
-      '[tex]/physics',
-      '[tex]/color',
-      '[tex]/mhchem'
-    ]
-  },
   tex: {
     // 注册这些包
-    packages: {'[+]': ['require','ams','physics','color','mhchem']},
+    packages: {'[+]': ['ams', 'physics', 'color', 'mhchem']},
     inlineMath: [['$', '$'], ['\\(', '\\)']],
     displayMath: [['$$','$$'], ['\\[','\\]']]
   },
