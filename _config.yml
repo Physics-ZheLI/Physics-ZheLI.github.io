@@ -11,7 +11,7 @@ kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
   hard_wrap: false
-  
+
 # 基础信息
 author:
   name: "Zhe Li"
@@ -34,3 +34,38 @@ nav:
     url: /about/
   - title: "Posts"
     url: /posts/
+
+
+# 主题皮肤：default / dark / contrast / neon / mint / sunrise / dirt / aqua / air
+minimal_mistakes_skin: "dark"   # 你现在是暗色，可试试 "neon" 或 "mint"
+
+title: "精神と時の部屋"
+subtitle: "Welcome to Zhe Li's Room of Time and Spirit"
+name: "Zhe Li"
+url: "https://physics-zheli.github.io"
+baseurl: ""
+
+# 首页与列表
+paginate: 6
+paginate_path: "/page:num/"
+show_excerpts: true
+
+# 插件
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# 作者卡片
+author:
+  name: "Zhe Li"
+  avatar: "/assets/images/me.jpg"
+  bio: "Physics Master Student · Exploring math, physics, and code"
+  location: "Shanghai, China"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/Physics-ZheLi"
+
+# 是否启用文档模式的顶部菜单
+show_docs: false

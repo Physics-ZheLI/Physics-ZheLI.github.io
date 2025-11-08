@@ -1,0 +1,29 @@
+---
+---
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes"; // 主题核心
+
+/* ———— 你的微调 ———— */
+:root {
+  --radius: 14px;
+}
+
+.page__hero--overlay {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+
+.feature__item {
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+.archive__item-title a {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.mjx-chtml { font-size: 1.04em; }              /* MathJax 字号微调 */
+.post .MathJax_Display { margin: 1.1rem 0; }   /* 行间数学间距 */

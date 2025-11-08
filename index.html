@@ -1,0 +1,46 @@
+---
+layout: home
+title: 精神と時の部屋
+author_profile: true          # 左侧作者卡片
+classes: wide                 # 宽版布局（可选：wide / narrow）
+# ———————— Hero 头图配置 ————————
+header:
+  overlay_image: /assets/images/hero.jpg     # 你的头图
+  overlay_filter: 0.25                       # 透明度（0=无，0.5=较暗）
+  overlay_color: "#0b1220"                   # 叠加色（深色更沉浸）
+  caption: "欢迎来到李哲的时间与精神之屋！"
+  actions:                                   # 头图上的按钮
+    - label: "开始阅读"
+      url: /posts/
+    - label: "关于我"
+      url: /about/
+# ———————— 特色卡片 ————————
+feature_row:
+  - image_path: /assets/images/feat-math.jpg
+    alt: "Math"
+    title: "数学札记"
+    excerpt: "分析、代数、几何与概率的零碎想法。"
+    url: /tags/#math
+    btn_label: "查看"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/feat-phys.jpg
+    alt: "Physics"
+    title: "物理手记"
+    excerpt: "从力学到量子场论的学习备忘。"
+    url: /tags/#physics
+    btn_label: "查看"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/feat-coding.jpg
+    alt: "Code"
+    title: "代码与工具"
+    excerpt: "Jekyll、LaTeX、Python、效率工具。"
+    url: /tags/#code
+    btn_label: "查看"
+    btn_class: "btn--primary"
+
+# ———————— 文章列表样式 ————————
+show_excerpts: true           # 首页摘要
+entries_layout: grid          # 网格布局：grid / list
+---
+
+{% include feature_row id="feature_row" type="left" %}
