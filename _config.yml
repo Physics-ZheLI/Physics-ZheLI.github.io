@@ -1,8 +1,9 @@
 # ————————————————————
 # 站点基础信息
 # ————————————————————
+logo: "/assets/images/Hyperbolic Time Chamber.png"
 title: "精神と時の部屋"
-subtitle: "Welcome to Zhe Li's Room of Time and Spirit"
+subtitle: "Welcome to Zhe Li's Hyperbolic Time Chamber"
 description: "A personal site powered by Minimal Mistakes"
 url: "https://physics-zheli.github.io"
 baseurl: ""   # 注意：若部署在子路径，需写 /子路径名
