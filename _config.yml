@@ -57,9 +57,6 @@ nav:
   - title: "Tags"
     url: /tags/
 
-# 禁用文档模式（去掉右上角 Quick-Start Guide）
-show_docs: false
-
 # ————————————————————
 # 首页与列表设置
 # ————————————————————

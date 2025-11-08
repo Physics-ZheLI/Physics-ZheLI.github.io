@@ -3,6 +3,9 @@ layout: single
 title: "Hello World! Hello Internet!"
 author_profile: false
 read_time: true
+header:
+  teaser: /assets/images/my-awesome-post-teaser.jpg
+show_date: true
 ---
 
 在 ChatGPT 的帮助下，终于创建了自己的网站！！
