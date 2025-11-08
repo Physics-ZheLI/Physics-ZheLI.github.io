@@ -1,10 +1,18 @@
+# ————————————————————
+# 站点基础信息
+# ————————————————————
 title: "精神と時の部屋"
+subtitle: "Welcome to Zhe Li's Room of Time and Spirit"
 description: "A personal site powered by Minimal Mistakes"
 url: "https://physics-zheli.github.io"
-baseurl: ""
-theme: minimal-mistakes-jekyll
+baseurl: ""   # 注意：若部署在子路径，需写 /子路径名
 
-minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+# ————————————————————
+# 主题与渲染设置
+# ————————————————————
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "neon"  # 可选: air, aqua, contrast, dark, dirt, neon, mint, plum, sunrise
+
 markdown: kramdown
 kramdown:
   input: GFM
@@ -12,21 +20,32 @@ kramdown:
   syntax_highlighter: rouge
   hard_wrap: false
 
-# 基础信息
+# ————————————————————
+# 作者信息
+# ————————————————————
 author:
   name: "Zhe Li"
-  avatar: "/assets/images/me.jpg"  # 你的头像路径
-  bio: "Physics Master Student | Exploring math, physics, and code"
-  location: "Shanghai, China"
+  avatar: "/assets/images/me.jpg"
+  bio: "Physics Master Student · Exploring math, physics, and code"
+  location: "Hangzhou, China"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/Physics-ZheLi"
 
+# ————————————————————
 # 社交媒体
+# ————————————————————
 social:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/Physics-ZheLi"
 
-# 导航菜单
+# ————————————————————
+# 导航菜单（顶部栏）
+# ————————————————————
+# 这里的 main 导航替代默认的 Quick-Start Guide
 nav:
   - title: "Home"
     url: /
@@ -34,38 +53,42 @@ nav:
     url: /about/
   - title: "Posts"
     url: /posts/
+  - title: "Tags"
+    url: /tags/
 
+# 禁用文档模式（去掉右上角 Quick-Start Guide）
+show_docs: false
 
-# 主题皮肤：default / dark / contrast / neon / mint / sunrise / dirt / aqua / air
-minimal_mistakes_skin: "dark"   # 你现在是暗色，可试试 "neon" 或 "mint"
-
-title: "精神と時の部屋"
-subtitle: "Welcome to Zhe Li's Room of Time and Spirit"
-name: "Zhe Li"
-url: "https://physics-zheli.github.io"
-baseurl: ""
-
-# 首页与列表
+# ————————————————————
+# 首页与列表设置
+# ————————————————————
 paginate: 6
 paginate_path: "/page:num/"
 show_excerpts: true
 
-# 插件
+# ————————————————————
+# 插件（GitHub Pages 官方支持的插件）
+# ————————————————————
 plugins:
   - jekyll-paginate
   - jekyll-feed
   - jekyll-seo-tag
 
-# 作者卡片
-author:
-  name: "Zhe Li"
-  avatar: "/assets/images/me.jpg"
-  bio: "Physics Master Student · Exploring math, physics, and code"
-  location: "Shanghai, China"
-  links:
-    - label: "GitHub"
-      icon: "fab fa-github"
-      url: "https://github.com/Physics-ZheLi"
+# ————————————————————
+# 其他可选配置
+# ————————————————————
+# 首页布局、分页、SEO
+include:
+  - _pages
 
-# 是否启用文档模式的顶部菜单
-show_docs: false
+# 启用数学公式支持（由 _includes/head/custom.html 提供 MathJax v4）
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
