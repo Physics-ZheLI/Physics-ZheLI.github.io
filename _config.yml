@@ -1,10 +1,10 @@
-title: Zhe Li's Blog!
+title: 精神と時の部屋
 description: 路漫漫其修远兮
 url: https://Physics-ZheLI.github.io
 baseurl: ""              # 根站点建议留空
 timezone: Asia/Shanghai
 
-theme: minima
+theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
