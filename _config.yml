@@ -1,22 +1,36 @@
-title: 精神と時の部屋
-description: 路漫漫其修远兮
-url: https://Physics-ZheLI.github.io
-baseurl: ""              # 根站点建议留空
-timezone: Asia/Shanghai
-
+title: "精神と時の部屋"
+description: "A personal site powered by Minimal Mistakes"
+url: "https://physics-zheli.github.io"
+baseurl: ""
 theme: minimal-mistakes-jekyll
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  # 可选再加：
-  # - jekyll-sitemap
 
-# 导航里显示哪些页面（minima）
-header_pages:
-  - index.md
-  - about.md
+minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter: rouge
+  hard_wrap: false
+  
+# 基础信息
+author:
+  name: "Zhe Li"
+  avatar: "/assets/images/me.jpg"  # 你的头像路径
+  bio: "Physics Master Student | Exploring math, physics, and code"
+  location: "Shanghai, China"
 
-# 社交链接（minima 支持）
-minima:
-  social_links:
-    - { platform: github, user_url: "https://github.com/Physics-ZheLI" }
+# 社交媒体
+social:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/Physics-ZheLi"
+
+# 导航菜单
+nav:
+  - title: "Home"
+    url: /
+  - title: "About"
+    url: /about/
+  - title: "Posts"
+    url: /posts/
